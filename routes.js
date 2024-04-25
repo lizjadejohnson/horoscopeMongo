@@ -15,4 +15,5 @@ router.get('/horoscope', (req, res) => {
 //Horoscope POST
 router.post('/horoscope', horoscopeController.getHoroscope);
 
+
 module.exports = router;

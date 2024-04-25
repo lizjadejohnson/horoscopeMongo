@@ -11,6 +11,10 @@ function HoroscopeResult({ sign, dob }) {
     const startDateFormatted = formatDate(sign.startDate);
     const endDateFormatted = formatDate(sign.endDate);
 
+    //Make a path to where our gif is located:
+    const gifPath = `/img/${sign.name.toLowerCase()}.gif`; //sign name has to be lowercase to match the file name
+
+
     return (
         <Layout title="Your Horoscope">
             <p>Sign: {sign.name}</p>
@@ -21,6 +25,7 @@ function HoroscopeResult({ sign, dob }) {
             <p>Traits: {sign.traits.join(', ')}</p>
             <p>Symbol: {sign.symbol}</p>
             <p>Compatibility: {sign.compatibility.join(', ')}</p>
+            <img src={gifPath} alt={`${sign.name} sign`} />
         </Layout>
     );
 }
