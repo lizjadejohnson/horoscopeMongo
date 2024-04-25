@@ -25,7 +25,7 @@ function HoroscopeResult({ sign, dob }) {
             <p>Traits: {sign.traits.join(', ')}</p>
             <p>Symbol: {sign.symbol}</p>
             <p>Compatibility: {sign.compatibility.join(', ')}</p>
-            <img src={gifPath} alt={`${sign.name} sign`} />
+            <img className="zodiacgif" src={gifPath} alt={`${sign.name} sign`} />
         </Layout>
     );
 }

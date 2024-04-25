@@ -24,6 +24,10 @@ body {
     text-align: center;
 }
 
+.zodiacgif {
+    width: 75%;
+}
+
 header {
     background: #007bff;
     color: #ffffff;
@@ -33,7 +37,7 @@ header {
 }
 
 h1 {
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 p {
