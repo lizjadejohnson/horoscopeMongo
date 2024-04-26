@@ -14,8 +14,72 @@ body {
     color: #333;
 }
 
+
+
+/* -----NAVBAR----- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.navbar-title {
+    color: white;
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin-right: 10px; /* Adjust spacing between links as needed */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Adjust padding as needed */
+}
+
+.navbar a:hover {
+    background-color: #111;
+}
+
+/* --HERO IMAGE-- */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+
+
+/* BODY GENERAL CONTENT */
 .container {
-    max-width: 600px;
+    max-width: 80%;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
@@ -28,12 +92,12 @@ body {
     width: 75%;
 }
 
-header {
+.heading-bar {
     background: #007bff;
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 0px 0px 8px 8px;
 }
 
 h1 {
@@ -46,7 +110,18 @@ p {
     margin-bottom: 20px;
 }
 
-/* Styling the form */
+
+
+/* FORM STYLING */
+
+.form-container {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 40%;
+  }
+
 form {
     margin-bottom: 20px;
 }
@@ -67,6 +142,15 @@ button {
     border: 1px solid #ccc;
 }
 
+input[type=text], input[type=password], input[type=email], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
 input[type="date"] {
     background: #f8f9fa;
 }
@@ -84,7 +168,9 @@ button:hover {
     background-color: #218838;
 }
 
-/* Responsive Design */
+
+
+/* -RESPONSIVE DESIGN- */
 @media (max-width: 768px) {
     .container {
         width: 95%;

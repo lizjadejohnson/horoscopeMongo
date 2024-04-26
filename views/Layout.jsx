@@ -11,7 +11,18 @@ function Layout(props) {
             </head>
             <body>
                 <header>
-                    <h1>{props.title}</h1>
+                <nav className="navbar">
+                    <span className='navbar-title'>Fortune Teller</span>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/about">About</a></li>
+              </ul>
+              </nav>
+            { !props.isIndexPage && <div className='heading-bar'>
+                <h1>{props.title}</h1>
+            </div> }
                 </header>
                 <div className="container">
                     {props.children}
