@@ -2,9 +2,18 @@ const React = require('react');
 const Layout = require('./Layout');
 
 function formatDate(date) {
+    if (!date) return ''; // Handle empty date case
+
+    const dateObject = new Date(date);
+    if (isNaN(dateObject.getTime())) return ''; // Handle invalid date case
+
+    // Add one day to the date
+    dateObject.setDate(dateObject.getDate() + 1);
+
     const options = { month: 'long', day: 'numeric' }; // Defines how to display the month and day
-    return new Intl.DateTimeFormat('en-US', options).format(new Date(date));
+    return new Intl.DateTimeFormat('en-US', options).format(dateObject);
 }
+
 
 function HoroscopeResult({ sign, dob }) {
     // Format start and end dates using the formatDate function

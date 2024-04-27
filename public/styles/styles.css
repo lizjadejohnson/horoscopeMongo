@@ -52,6 +52,47 @@ body {
     background-color: #111;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 110%; /* Position the dropdown menu below the parent menu item */
+    left: 0;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown menu only when the parent menu item is hovered over */
+}
+
+/* Adjustments for Dropdown Links */
+.dropdown-menu a {
+    color: white;
+    padding: 10px 15px;
+    display: block; /* Ensure each dropdown link appears as a block element */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.dropdown-menu a:hover {
+    background-color: #111;
+}
+
+/* Hide dropdown menu by default */
+.navbar ul ul {
+    display: none;
+}
+
+/* Display dropdown menu when its parent is hovered over */
+.navbar ul li:hover > ul {
+    display: inherit;
+}
+
 /* --HERO IMAGE-- */
 
 .hero {
@@ -89,7 +130,7 @@ body {
 }
 
 .zodiacgif {
-    width: 75%;
+    width: 25%;
 }
 
 .heading-bar {
@@ -175,5 +216,9 @@ button:hover {
     .container {
         width: 95%;
         padding: 15px;
+    }
+
+    .zodiacgif {
+        width: 75%;
     }
 }

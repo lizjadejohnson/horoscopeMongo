@@ -7,6 +7,16 @@ router.get('/', (req, res) => {
     res.render('Index', { title: 'Index', message: 'Welcome to the Home Page!' });
 });
 
+//Index page get req:
+router.post('/', (req, res) => {
+    res.render('Index', { title: 'Index', message: 'Welcome to the Home Page!' });
+});
+
+// Horoscope page GET
+router.get('/signup', (req, res) => {
+    res.render('signUp', { title: 'Create an Account' });
+});
+
 // Horoscope page GET
 router.get('/horoscope', (req, res) => {
     res.render('Horoscope', { title: 'Enter Your Birthdate' });
@@ -14,6 +24,5 @@ router.get('/horoscope', (req, res) => {
 
 //Horoscope POST
 router.post('/horoscope', horoscopeController.getHoroscope);
-
 
 module.exports = router;
