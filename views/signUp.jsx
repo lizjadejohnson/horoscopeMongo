@@ -1,10 +1,10 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-class Index extends React.Component {
+class SignUp extends React.Component {
   render() {
     return (
-      <Layout title={this.props.title} user={props.user}>
+      <Layout title={this.props.title} user={this.props.user}>
         <div className="auth-forms">
           <div className="form-container">
             <h2>Sign Up</h2>
@@ -22,4 +22,4 @@ class Index extends React.Component {
   }
 }
 
-module.exports = Index;
+module.exports = SignUp;

@@ -16,6 +16,10 @@ function formatDate(date) {
 
 
 function HoroscopeResult({ sign, dob }) {
+    if (!sign || !dob) {
+        return <Layout title="Error">Missing horoscope data!</Layout>;
+    }
+    
     // Format start and end dates using the formatDate function
     const startDateFormatted = formatDate(sign.startDate);
     const endDateFormatted = formatDate(sign.endDate);
@@ -25,7 +29,7 @@ function HoroscopeResult({ sign, dob }) {
 
 
     return (
-        <Layout title="Your Horoscope" user={props.user}>
+        <Layout title="Your Horoscope">
             <p>Sign: {sign.name}</p>
             <p>Date Range: {startDateFormatted} - {endDateFormatted}</p>
             <p>Element: {sign.element}</p>
