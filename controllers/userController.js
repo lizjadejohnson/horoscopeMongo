@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 
 exports.loginPage = (req, res) => {
@@ -17,11 +17,7 @@ exports.login = async (req, res) => {
     }
     // Set up session for the user
     req.session.user = user;
-    res.redirect('/dashboard'); // Redirect to dashboard or any other page
-};
-
-exports.signupPage = (req, res) => {
-    res.render('signup', { title: 'Sign Up' });
+    res.redirect('/'); // Redirect to dashboard or any other page
 };
 
 exports.signup = async (req, res) => {
@@ -37,5 +33,5 @@ exports.signup = async (req, res) => {
         dob
     });
     await user.save();
-    res.redirect('/login'); // Redirect to login page after successful signup
+    res.redirect('/'); // Redirect to login page after successful signup
 };
