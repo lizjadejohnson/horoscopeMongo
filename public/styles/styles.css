@@ -9,7 +9,6 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
     background-color: #e9ecef;
     color: #333;
 }
@@ -23,6 +22,7 @@ body {
     align-items: center;
     background-color: #333;
     padding: 0 20px; /* Adjust padding as needed */
+    width: 100%;
 }
 
 .navbar-title {
@@ -60,11 +60,16 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 110%; /* Position the dropdown menu below the parent menu item */
+    top: 120%; /* Position the dropdown menu below the parent menu item */
     left: 0;
     background-color: #333;
     min-width: 160px;
     z-index: 1;
+}
+
+#login-dropdown {
+    width: 400px;
+    left: -100%;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -163,9 +168,11 @@ p {
     width: 40%;
   }
 
-form {
-    margin-bottom: 20px;
-}
+  .login-container {
+    margin: 20px auto;
+    width: 100%;
+    padding: 10px;
+  }
 
 label {
     display: block;
@@ -209,9 +216,16 @@ button:hover {
     background-color: #218838;
 }
 
+.login-head {
+    color: #218838;
+    text-align: center;
+}
 
+#create-button {
+    text-align: center;
+}
 
-/* -RESPONSIVE DESIGN- */
+/* -----RESPONSIVE DESIGN----- */
 @media (max-width: 768px) {
     .container {
         width: 95%;

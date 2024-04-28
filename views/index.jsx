@@ -12,6 +12,7 @@ class Index extends React.Component {
             <p>Discover and document your magical journey.</p>
           </div>
         </section>
+
         <div className="auth-forms">
           <div className="form-container">
             <h2>Login</h2>

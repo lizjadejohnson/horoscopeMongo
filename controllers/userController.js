@@ -1,9 +1,6 @@
 const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 
-exports.loginPage = (req, res) => {
-    res.render('login', { title: 'Login' });
-};
 
 exports.login = async (req, res) => {
     const { username, password } = req.body;
@@ -15,9 +12,13 @@ exports.login = async (req, res) => {
     if (!validPassword) {
         return res.status(400).send('Invalid username or password');
     }
+    // Log the successful login:
+    console.log(`Login successful for user: ${username}`);
+
     // Set up session for the user
     req.session.user = user;
-    res.redirect('/'); // Redirect to dashboard or any other page
+    res.redirect('/'); // Redirect to main page after successful logup
+    console.log(`Login session started for user: ${username}`);
 };
 
 exports.signup = async (req, res) => {
@@ -33,5 +34,5 @@ exports.signup = async (req, res) => {
         dob
     });
     await user.save();
-    res.redirect('/'); // Redirect to login page after successful signup
+    res.redirect('/'); // Redirect to main page after successful signup
 };

@@ -17,14 +17,15 @@ function Layout(props) {
                             <li><a href="/">Home</a></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle">Sign In</a>
-                                <ul className="dropdown-menu">
+                                <ul className="dropdown-menu" id='login-dropdown'>
                                     <div className="auth-forms">
-                                        <div className="form-container">
-                                            <h2>Login</h2>
+                                        <div className="login-container">
+                                            <h2 className='login-head'>Login</h2>
                                             <form action="/login" method="POST">
                                                 <input type="text" name="username" placeholder="Username" required />
                                                 <input type="password" name="password" placeholder="Password" required />
                                                 <button type="submit">Log In</button>
+                                                <a id="create-button" href="/signup">Create New Account</a>
                                             </form>
                                         </div>
                                     </div>

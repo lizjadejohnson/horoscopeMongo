@@ -9,11 +9,6 @@ router.get('/', (req, res) => {
     res.render('Index', { title: 'Index', message: 'Welcome to the Home Page!' });
 });
 
-//Index page get req:
-router.post('/', (req, res) => {
-    res.render('Index', { title: 'Index', message: 'Welcome to the Home Page!' });
-});
-
 
 // -----SIGN UP ROUTES ----- //
 // Sign Up page GET
@@ -21,7 +16,12 @@ router.get('/signup', (req, res) => {
     res.render('signUp', { title: 'Create an Account' });
 });
 
+// Sign Up page POST
 router.post('/signup', userController.signup);
+
+
+// -----LOGIN ROUTES ----- //
+router.post('/login', userController.login);
 
 
 
