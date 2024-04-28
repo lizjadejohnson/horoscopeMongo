@@ -21,7 +21,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 0 20px; /* Adjust padding as needed */
+    padding: 0 70px; /* Adjust padding as needed */
     width: 100%;
 }
 
@@ -168,11 +168,11 @@ p {
     width: 40%;
   }
 
-  .login-container {
+.login-container {
     margin: 20px auto;
     width: 100%;
     padding: 10px;
-  }
+}
 
 label {
     display: block;
@@ -224,6 +224,8 @@ button:hover {
 #create-button {
     text-align: center;
 }
+
+
 
 /* -----RESPONSIVE DESIGN----- */
 @media (max-width: 768px) {

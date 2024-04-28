@@ -4,7 +4,7 @@ const Layout = require('./Layout');
 class Index extends React.Component {
   render() {
     return (
-      <Layout title={this.props.title} isIndexPage={true}>
+      <Layout title={this.props.title} user={this.props.user} isIndexPage={true}>
         <section className="hero">
           <img src="/img/hero-img.jpg" alt="Fortune Teller Cover" className="hero-img"/>
           <div className="hero-text">

@@ -25,7 +25,7 @@ function HoroscopeResult({ sign, dob }) {
 
 
     return (
-        <Layout title="Your Horoscope">
+        <Layout title="Your Horoscope" user={props.user}>
             <p>Sign: {sign.name}</p>
             <p>Date Range: {startDateFormatted} - {endDateFormatted}</p>
             <p>Element: {sign.element}</p>

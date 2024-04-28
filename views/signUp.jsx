@@ -4,7 +4,7 @@ const Layout = require('./Layout');
 class Index extends React.Component {
   render() {
     return (
-      <Layout title={this.props.title}>
+      <Layout title={this.props.title} user={props.user}>
         <div className="auth-forms">
           <div className="form-container">
             <h2>Sign Up</h2>

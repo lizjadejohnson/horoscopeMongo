@@ -1,6 +1,7 @@
 const React = require('react');
 
 function Layout(props) {
+    console.log('Layout props:', props);  // This should include the user prop if passed correctly
     return (
         <html lang="en">
             <head>
@@ -15,23 +16,32 @@ function Layout(props) {
                         <span className='navbar-title'>Fortune Teller</span>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li className="dropdown">
-                                <a href="#" className="dropdown-toggle">Sign In</a>
-                                <ul className="dropdown-menu" id='login-dropdown'>
-                                    <div className="auth-forms">
-                                        <div className="login-container">
-                                            <h2 className='login-head'>Login</h2>
-                                            <form action="/login" method="POST">
-                                                <input type="text" name="username" placeholder="Username" required />
-                                                <input type="password" name="password" placeholder="Password" required />
-                                                <button type="submit">Log In</button>
-                                                <a id="create-button" href="/signup">Create New Account</a>
-                                            </form>
+                            {props.user ? (
+                                <li className="dropdown">
+                                    <a href="#" className="dropdown-toggle">Account</a>
+                                    <ul className="dropdown-menu">
+                                        <li><a href="/edit-profile">User: {props.user.username}<br />Edit Profile</a></li>
+                                        <li><a href="/logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                            ) : (
+                                <li className="dropdown">
+                                    <a href="#" className="dropdown-toggle">User</a>
+                                    <ul className="dropdown-menu" id='login-dropdown'>
+                                        <div className="auth-forms">
+                                            <div className="login-container">
+                                                <h2 className='login-head'>Login</h2>
+                                                <form action="/login" method="POST">
+                                                    <input type="text" name="username" placeholder="Username" required />
+                                                    <input type="password" name="password" placeholder="Password" required />
+                                                    <button type="submit">Log In</button>
+                                                    <a id="create-button" href="/signup">Create New Account</a>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li><a href="/signup">Sign Up</a></li>
+                                    </ul>
+                                </li>
+                            )}
                             <li className="dropdown">
                                 <a href="/horoscope" className="dropdown-toggle">Horoscopes</a>
                                 <ul className="dropdown-menu">
