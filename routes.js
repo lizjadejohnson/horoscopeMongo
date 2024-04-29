@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const horoscopeController = require('./controllers/horoscopeController');
+const easternZodiacController = require('./controllers/easternZodiacController');
 const userController = require('./controllers/userController');
 
 // -----INDEX ROUTES ----- //
@@ -75,5 +76,37 @@ router.post('/horoscope', (req, res) => {
     }
     horoscopeController.getHoroscope(req, res);
 });
+
+
+// -----EASTERN ZODIAC ROUTES ----- //
+// EASTERN Zodiac page GET
+router.get('/eastern-zodiac', (req, res) => {
+    if (req.session.user) {
+        // If logged in, pass user data but no need for date input
+        res.render('EasternZodiac', {
+            title: 'Your Eastern Zodiac',
+            user: req.session.user,
+            showDateInput: false // Indicates not to show the date input field
+        });
+    } else {
+        // For non-logged in users, show the date input
+        res.render('EasternZodiac', {
+            title: 'Enter Your Birthdate',
+            user: null,
+            showDateInput: true
+        });
+    }
+});
+
+
+//Horoscope POST
+router.post('/eastern-zodiac', (req, res) => {
+    if (req.session.user) {
+        // Use the DOB from the session
+        req.body.dob = req.session.user.dob; // Ensure this is formatted or converted as needed in your controller
+    }
+    easternZodiacController.getEasternZodiac(req, res);
+});
+
 
 module.exports = router;

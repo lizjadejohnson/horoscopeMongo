@@ -11,6 +11,8 @@ const MongoStore = require('connect-mongo');
 const connectToDB = require('./config/connectToDB'); //Pulls Mongoose connection into main application
 const app = express();
 
+
+
 // Use body parser middleware to parse JSON and urlencoded data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,6 +45,12 @@ app.use(session({
 connectToDB();
 //This initializes our connectToDb function
 
+// const dataPop = require("./dataPop")
+//Initialize data
+// Ran this to populate zodiac data the first time
+// dataPop()
+// Ran this to populate zodiac data the first time
+
 
 // Setting up JSX View Engine:
 app.set('views', __dirname + '/views'); // Directory for views
@@ -60,9 +68,3 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-// dataPop = require("./dataPop")
-//Initialize data
-// Ran this to populate zodiac data the first time
-
-// dataPop()
-// Ran this to populate zodiac data the first time

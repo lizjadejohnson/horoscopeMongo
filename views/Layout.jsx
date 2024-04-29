@@ -43,11 +43,10 @@ function Layout(props) {
                                 </li>
                             )}
                             <li className="dropdown">
-                                <a href="/horoscope" className="dropdown-toggle">Horoscopes</a>
+                                <a href="#" className="dropdown-toggle">Horoscopes</a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="/Horoscope1">Horoscope 1</a></li>
-                                    <li><a href="/Horoscope2">Horoscope 2</a></li>
-                                    <li><a href="/Horoscope3">Horoscope 3</a></li>
+                                    <li><a href="/horoscope">Western Zodiac</a></li>
+                                    <li><a href="/eastern-zodiac">Eastern Zodiac</a></li>
                                 </ul>
                             </li>
                             <li><a href="/about">About</a></li>
