@@ -24,6 +24,9 @@ function EasternZodiacResult(props) {
     const dobFormatted = formatDate(dob); // Format the date of birth for display
     const years = sign.years.join(', '); // Join all years associated with the sign
 
+    const gifPath = `/img/${sign.name.toLowerCase()}.gif`; // Ensure sign name is lowercase to match the file name
+
+
     return (
         <Layout title="Your Eastern Horoscope" user={user}>
             <h1>The {sign.name}</h1>
@@ -32,6 +35,7 @@ function EasternZodiacResult(props) {
             <p><strong>Element:</strong> {sign.element}</p>
             <p><strong>Traits:</strong> {sign.traits.join(', ')}</p>
             <p><strong>Compatibility:</strong> {sign.compatibility.join(', ')}</p>
+            <img className="zodiacgif" src={gifPath} alt={`${sign.name} sign`} />
         </Layout>
     );
 }
