@@ -1,6 +1,4 @@
 require('dotenv').config();
-console.log('Session Secret:', process.env.SESSION_SECRET);  // Verify it prints correctly.
-console.log('DB URL:', process.env.DB_URL);  // Verify it prints correctly.
 
 const express = require('express');
 const mongoose = require('mongoose');
