@@ -109,4 +109,12 @@ router.post('/eastern-zodiac', (req, res) => {
 });
 
 
+// -----PROFILE ROUTES ----- //
+
+// Use the controller's function for the GET request
+router.get('/edit-profile', userController.getEditProfile);
+
+router.post('/update-profile', userController.updateProfile);
+
+
 module.exports = router;
